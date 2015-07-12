@@ -11,7 +11,7 @@ angular.module('app', [])
             users.push({
                 number: number(self.number),
                 name: self.name,
-                plan: 1
+                plans: 1
             });
 
             if (self.friendNumber || self.friendName) {

@@ -1,10 +1,10 @@
 package manna.users;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import manna.plans.Plan;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 public class User {
@@ -17,6 +17,10 @@ public class User {
 
     @NotNull
     private String number;
+
+    @ManyToMany
+    @JoinTable(name="plans_users")
+    private List<Plan> plans;
 
     protected User() {}
 
@@ -51,5 +55,13 @@ public class User {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public List<Plan> getPlans() {
+        return plans;
+    }
+
+    public void setPlans(List<Plan> plans) {
+        this.plans = plans;
     }
 }

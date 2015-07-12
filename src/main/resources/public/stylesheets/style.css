@@ -1,0 +1,138 @@
+html, body {
+  height: 100%;
+  font: 16px Helvetica;
+  color: #A3A3A3;
+}
+
+form {
+  width: 100%;
+}
+
+.Container {
+  padding: 0 16px;
+  line-height: 1.6em;
+  max-width: 960px;
+  margin: 0px auto;
+}
+
+.Header {
+  display: flex;
+}
+
+.Header__logo {
+  margin: auto;
+  padding: 16px;
+}
+
+.Title {
+  font-size: 24px;
+  color: #F3A174;
+  margin: 8px 0;
+}
+
+.SectionSeparator {
+  background-color: #C8C8C8;
+  height: 1px;
+  opacity: 0.5;
+}
+
+.Section {
+  margin: 16px 0;
+}
+
+.Paragraph, .IconListItem,  .Callout {
+  margin: 8px 0;
+}
+
+.Callout {
+  text-align: center;
+  font-weight: lighter;
+  background: #F5f5f5;
+  font-size: 14px;
+  padding: 16px;
+}
+
+.SignupForm {
+  display: flex;
+  margin: auto;
+}
+
+.SignupForm__row {
+  display: flex;
+  margin: 8px 0;
+  flex: 1;
+}
+
+.SignupForm__input-row {
+  display: flex;
+}
+
+.SignupForm__label {
+  padding-right: 8px;
+}
+
+.SignupForm__input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #D9D9D9;
+}
+
+.SignupForm__input::placeholder {
+  color: rgba(163, 163, 163, 0.75);
+}
+
+.SignupForm__errors {
+  color: #F37474;
+}
+
+
+.PrimaryButton {
+  background-color: #F3A174;
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 16px;
+  border: none;
+}
+
+.IconList {
+  padding-left: 8px;
+  margin: 16px 0;
+}
+
+.IconListItem {
+  display: flex;
+  align-items: center;
+}
+
+.IconListItem__icon {
+  padding-right: 8px;
+  font-size: 24px;
+}
+
+.IconListItem__text {
+  flex: 1;
+}
+
+.Description {
+  font-size: 10px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .IconList {
+    display: flex;
+  }
+
+  .SignupForm__spacer {
+    width: 16px;
+  }
+
+  .SignupForm__parallel {
+    display: flex;
+  }
+}
+
+.Scheduler__Text {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}

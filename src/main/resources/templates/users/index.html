@@ -9,37 +9,7 @@
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
-    <script>
-        angular.module('app', [])
-                .controller('SubscribeCtrl', function($http, $scope) {
-                    var self = this;
-
-                    this.showForm = true;
-
-                    this.name  = '';
-                    this.number = '';
-
-                    this.submit = function(e) {
-                        e.preventDefault();
-                        if (this.friend_number) {
-                            this.friend_number = this.friend_number.replace(/(-|\.|_|\s)/g, '');
-                        }
-                        $http.post('/register', {
-                            number: this.number.replace(/(-|\.|_|\s)/g, ''),
-                            name: this.name,
-                            friend_first_name: this.friend_first_name,
-                            friend_number: this.friend_number
-                        })
-                                .success(function(response) {
-                                    self.showForm = false;
-                                })
-                                .catch(function(err) {
-                                    self.errors = err.data.errors;
-                                    self.fields = err.data.fields;
-                                });
-                    }
-                });
-    </script>
+    <script src="/javascripts/users/app.js"></script>
     <div class="Header"><img src="/images/logo.svg" class="Header__logo"/></div>
     <div class="Container">
         <div class="SectionSeparator"></div>
@@ -72,21 +42,21 @@
                         </div>
                         <div class="SignupForm__parallel">
                             <div class="SignupForm__row">
-                                <input name="name" type="text" ng-model="ctrl.name" placeholder="First Name" class="SignupForm__input"/>
+                                <input type="text" ng-model="ctrl.name" placeholder="First Name" class="SignupForm__input"/>
                             </div>
                             <div class="SignupForm__spacer"></div>
                             <div class="SignupForm__row">
-                                <input name="number" type="text" ng-model="ctrl.number" placeholder="Phone Number" class="SignupForm__input"/>
+                                <input type="text" ng-model="ctrl.number" placeholder="Phone Number" class="SignupForm__input"/>
                             </div>
                         </div>
                         <div class="Callout">We recommend adding a friend to help motivate and keep you on track. Your friend will receive occasional messages to help in your success. Your friend must agree to receiving these messages before you add them!</div>
                         <div class="SignupForm__parallel">
                             <div class="SignupForm__row">
-                                <input name="friend_first_name" type="text" ng-model="ctrl.friend_first_name" placeholder="Friend's Name" class="SignupForm__input"/>
+                                <input type="text" ng-model="ctrl.friendName" placeholder="Friend's Name" class="SignupForm__input"/>
                             </div>
                             <div class="SignupForm__spacer"></div>
                             <div class="SignupForm__row">
-                                <input name="friend_number" type="text" ng-model="ctrl.friend_number" placeholder="Friend's Phone Number" class="SignupForm__input"/>
+                                <input type="text" ng-model="ctrl.friendNumber" placeholder="Friend's Phone Number" class="SignupForm__input"/>
                             </div>
                         </div>
                         <div class="SignupForm__row">

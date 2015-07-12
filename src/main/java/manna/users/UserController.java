@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -22,9 +23,13 @@ public class UserController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
-    public User register(@RequestBody @Valid final User user) {
-        repository.save(user);
-        return user;
+    public List<User> register(@RequestBody @Valid final List<User> users) {
+
+        for (User user : users) {
+            repository.save(user);
+        }
+
+        return users;
     }
 
 

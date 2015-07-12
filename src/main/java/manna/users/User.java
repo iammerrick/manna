@@ -6,9 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-/**
- * Created by Merrick on 7/6/15.
- */
 @Entity
 public class User {
     @Id
